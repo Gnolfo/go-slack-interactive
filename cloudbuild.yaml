@@ -1,6 +1,10 @@
 steps:
 - name: gcr.io/cloud-builders/go
   env: ["PROJECT_ROOT=app"]
+  args: ["install"]
+
+- name: gcr.io/cloud-builders/go
+  env: ["PROJECT_ROOT=app"]
   args: ["build", "-o", "app"]
   
 - name: "gcr.io/cloud-builders/docker"
